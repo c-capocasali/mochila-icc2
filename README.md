@@ -1,4 +1,4 @@
-**Problema da Mochila 0/1**
+# Problema da Mochila
 
 ***Objetivo Geral***
 
@@ -6,25 +6,25 @@ O objetivo deste trabalho prático é que o aluno desenvolva e implemente três 
 
 - tempo de execução para diferentes valores de *n* e comparando a eficiência de cada abordagem. 
 
-***Descriçãodo do Problema***
+***Descrição do Problema***
 
 O Problema da Mochila 0/1 é um problema clássico de otimização combinatória que pode ser descrito da seguinte forma: 
 
 Dado um conjunto de *n* itens, cada um com um peso *wi* e um valor *vi*, e uma mochila que pode suportar um peso máximo *W*, determine a combinação de itens que maximiza o valor total sem exceder a capacidade da mochila. Cada item pode ser incluído ou excluído da mochila na sua totalidade (não é permitido fracionar itens). 
 
-***Versão1: Força Bruta***
+***Versão 1: Força Bruta***
 
 O paradigma de **Força Bruta** é uma abordagem direta para resolver problemas de otimização, onde todas as combinações possíveis de soluções são geradas e avaliadas, e a melhor solução é escolhida. No contexto do Problema da Mochila 0/1, isso significa gerar todas as combinações possíveis de itens (incluindo ou excluindo cada item) e calcular o valor total de cada combinação, respeitando a restrição de capacidade da mochila. Esse algoritmo deve fornecer uma **solução ótima** para qualquer entrada.  
 
 Implementar a solução de força bruta em Linguagem C. Criar a equação de recorrência que descreve a solução (se aplicável) e analisar a complexidade temporal do algoritmo. Utilizar método de substituição ou árvore de recorrência para demonstrar a complexidade do algoritmo. 
 
-***Versão2: Algoritmo Guloso***
+***Versão 2: Algoritmo Guloso***
 
 O **Algoritmo Guloso** é uma abordagem que toma decisões localmente ótimas na esperança de encontrar a solução global ótima. No contexto da mochila, o algoritmo guloso tenta maximizar o valor total da mochila selecionando itens com base na razão valor/peso de cada item, de forma decrescente, até atingir a capacidade máxima. Essa abordagem não garante uma solução ótima para o Problema da Mochila 0/1, portanto, sua implementação pode fornecer uma **solução aproximada** para qualquer entrada. 
 
 Implementar o algoritmo guloso em Linguagem C. Analisar a solução e a sua complexidade temporal, explicando por que não garante a solução ótima no caso da mochila 0/1. 
 
-***Versão3: Programação Dinâmica***
+***Versão 3: Programação Dinâmica***
 
 A **Programação Dinâmica** é uma técnica de otimização que resolve problemas complexos dividindo-os em  subproblemas  menores,  armazenando  os  resultados  dos  subproblemas  para  evitar  recomputação.  No Problema da Mochila 0/1, a programação dinâmica constrói uma tabela que armazena o valor máximo possível para cada subproblema definido pelos primeiros *i* itens e uma capacidade *w*. Esse algoritmo deve fornecer uma **solução ótima** para qualquer entrada. 
 
