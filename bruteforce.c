@@ -13,6 +13,7 @@ typedef struct {
 
 int main(void)
 {
+	int peso_maximo = 10;
 	int peso_total = 0;
 	int valor_total = 0;
 
@@ -24,9 +25,6 @@ int main(void)
 
 	for (int i = 0; i < quantidade_itens; i++)
 		scanf("%d %d", &itens[i].valor, &itens[i].peso);
-
-	for (int i = 0; i < quantidade_itens; i++)
-		printf("%d %d\n", itens[i].valor, itens[i].peso);
 
 	free(itens);
 
