@@ -1,7 +1,10 @@
-#include <stdio.h> 
-#include <stdlib.h> 
 #include "operacoes.h" 
 
+struct item_ {
+    int valor;
+    int peso;
+    float razao; 
+};
 
 //Implementação do algoritmo guloso
 void alg_guloso(ITEM *items, int qntd_items, int peso_limite) {
@@ -11,41 +14,33 @@ void alg_guloso(ITEM *items, int qntd_items, int peso_limite) {
     int soma_pesos = 0; 
     int cont = 0; 
 
-
-    //Copiando os items para o items_aux e calculando a razão valor/peso
+    // Copiando os items para o items_aux e calculando a razão valor/peso
     for(int i =0; i<qntd_items; i++) {
-        items_aux[i] = items[i]; 
-        items_aux[i].razao = (float)items_aux[i].valor/items_aux[i].peso; 
-
+        items_aux[i] = items[i];
+        items_aux[i].razao = (float)items_aux[i].valor/items_aux[i].peso;
     }
         
-    //Ordenando em ordem decrescente 
+    // Ordenando em ordem decrescente 
     quick_sort(items_aux, 0, qntd_items-1); 
 
-    //Calculando a soma total dos items na mochila     
+    // Calculando a soma total dos items na mochila     
     for(int i =0; i<qntd_items; i++) {
         if(items_aux[i].peso <= peso_limite) {
             soma_valores += items_aux[i].valor; 
             soma_pesos += items_aux[i].peso; 
             peso_limite -= items_aux[i].peso; 
-
-        } else 
+        } 
+        else 
             break; 
     }
-
 
     printf("Valor máximo na mochila: %d\n", soma_valores); 
     printf("Peso total: %d\n", soma_pesos); 
 
-    free(items_aux); 
-
-    
-    
-
+    free(items_aux);
 }
 
-
-//Algoritmo de ordenação quick_sort
+// Algoritmo de ordenação quick_sort
 void quick_sort(ITEM *items, int inicio, int fim) {
     
     if(inicio < fim) {
@@ -56,8 +51,7 @@ void quick_sort(ITEM *items, int inicio, int fim) {
         i = inicio; 
         j = fim; 
 
-
-        do{
+        do {
             while(items[i].razao > pivo) 
                 i++; 
             while(items[j].razao < pivo) 
@@ -69,14 +63,11 @@ void quick_sort(ITEM *items, int inicio, int fim) {
                 items[j] = tmp; 
                 i++; 
                 j--; 
-
             }
 
-        }while(i<j); 
+        } while(i<j); 
 
         quick_sort(items, inicio, j); 
         quick_sort(items, i, fim); 
     }
-
-
 }

@@ -1,10 +1,8 @@
-// testar todas as combinações
-// W (total mochila) - w (peso item)
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-// Definido uma struct para os itens da mochila
+// Struct que define um item da mochila
 typedef struct {
 	int valor;
 	int peso;
